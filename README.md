@@ -1,5 +1,5 @@
 # Microsoft Building Footprints Downloader
-This repository contains a script to download [Microsoft Building Footprints](https://github.com/microsoft/GlobalMLBuildingFootprints) for a specific municipality of the European Union. Boundaries are automatically obtained via [GISCO](https://ec.europa.eu/eurostat/web/gisco), through the [LAUs](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/lau) dataset.
+This repository contains a script to download [Microsoft Building Footprints](https://github.com/microsoft/GlobalMLBuildingFootprints) for a specific municipality/region/country of the European Union. Boundaries are automatically obtained via [GISCO](https://ec.europa.eu/eurostat/web/gisco), through the [LAUs](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/lau) or [NUTS](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts) dataset.
 
 ![screenshot](https://github.com/samuzilio/microsoft_building_footprints_downloader/assets/94171193/571c4574-216f-4399-a733-0d3e4865f3b1)
 
@@ -27,7 +27,7 @@ $ source .venv\bin\activate (for macOS and Linux)
 ```
 $ pip install -r requirements.txt
 ```
-**7**. Run the script:
+**7**. Run the script (e.g. downloader_lau.py):
 ```
-$ python script.py
+$ python downloader_lau.py
 ```
