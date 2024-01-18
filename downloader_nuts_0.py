@@ -43,14 +43,18 @@ with tempfile.TemporaryDirectory() as tmpdir:
         elif rows.shape[0] > 1:
             print(f"Multiple rows found for QuadKey: {quad_key}")
             print(rows)
-            chosen_row = rows[rows["Location"] == "Italy"].iloc[0] # Choose a specific row based on the "Location" column (e.g., "Italy")
-            url = chosen_row["Url"]
-            df2 = pd.read_json(url, lines=True)
-            df2["geometry"] = df2["geometry"].apply(shapely.geometry.shape)
-            gdf = gpd.GeoDataFrame(df2, crs=4326)
-            combined_rows.append(gdf)
+            chosen_row = rows[rows["Location"] == "Italy"] # Choose a specific row based on the "Location" column (e.g., "Italy")
+            if not chosen_row.empty:
+                chosen_row = chosen_row.iloc[0]
+                url = chosen_row["Url"]
+                df2 = pd.read_json(url, lines=True)
+                df2["geometry"] = df2["geometry"].apply(shapely.geometry.shape)
+                gdf = gpd.GeoDataFrame(df2, crs=4326)
+                combined_rows.append(gdf)
+            else:
+                print(f"No rows found for QuadKey: {quad_key} and Location: Italy")
         else:
-            raise ValueError(f"QuadKey not found in dataset: {quad_key}")
+            print(f"Warning: QuadKey {quad_key} not found in dataset")
 
 # Concatenate GeoDataFrames obtained for each quad key
 concatenated_gdf = gpd.GeoDataFrame(pd.concat(combined_rows, ignore_index=True), crs=4326)
