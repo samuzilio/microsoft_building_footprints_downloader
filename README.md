@@ -21,7 +21,7 @@ $ python -m venv .venv
 ```
 ```
 $ .venv\Scripts\activate (for Windows)
-$ source .venv\bin\activate (for macOS and Linux)
+$ source .venv/bin/activate (for macOS and Linux)
 ```
 **6**. Install dependencies:
 ```
