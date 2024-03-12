@@ -7,7 +7,7 @@ from tqdm import tqdm
 import geopandas as gpd
 import json
 
-# Fetch and parse NUTS 2 level GeoJson file from GISCO
+# Fetch and parse NUTS 2 level GeoJSON file from GISCO
 nuts_2_url = "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_01M_2021_4326_LEVL_2.geojson"
 response = requests.get(nuts_2_url)
 nuts_2 = response.json()
@@ -65,7 +65,7 @@ mask = gpd.GeoDataFrame([{"geometry": target_shape}], crs=4326)
 # Overlay the concatenated GeoDataFrame with the target region mask
 overlayed_gdf = gpd.overlay(concatenated_gdf, mask, how="intersection")
 
-# Convert the GeoDataFrame to GeoJson
+# Convert the GeoDataFrame to GeoJSON
 geojson_data = overlayed_gdf.to_json()
 
 # Un-nest "properties" key
