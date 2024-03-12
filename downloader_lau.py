@@ -7,7 +7,7 @@ from tqdm import tqdm
 import geopandas as gpd
 import json
 
-# Fetch and parse Local Administrative Units GeoJson file from GISCO
+# Fetch and parse Local Administrative Units GeoJSON file from GISCO
 lau_url = "https://gisco-services.ec.europa.eu/distribution/v2/lau/geojson/LAU_RG_01M_2021_4326.geojson"
 response = requests.get(lau_url)
 lau = response.json()
@@ -65,7 +65,7 @@ mask = gpd.GeoDataFrame([{"geometry": target_shape}], crs=4326)
 # Overlay the concatenated GeoDataFrame with the target municipality mask
 overlayed_gdf = gpd.overlay(concatenated_gdf, mask, how="intersection")
 
-# Convert the GeoDataFrame to GeoJson
+# Convert the GeoDataFrame to GeoJSON
 geojson_data = overlayed_gdf.to_json()
 
 # Un-nest "properties" key
