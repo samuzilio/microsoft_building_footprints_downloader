@@ -74,7 +74,7 @@ for feature in geojson_data['features']:
     feature['properties'] = feature['properties']['properties']
     feature['properties'].pop('type', None)
 
-# Save the result
+# Store the result in a new GeoJSON file
 output_geojson_path = f".\{target_name}.geojson"
 with open(output_geojson_path, 'w', encoding='utf-8') as output_file:
     json.dump(geojson_data, output_file, ensure_ascii=False, indent=2)
