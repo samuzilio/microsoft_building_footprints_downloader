@@ -3,6 +3,10 @@ This repository contains a script to download [Microsoft Building Footprints](ht
 
 ![screenshot](https://github.com/samuzilio/microsoft_building_footprints_downloader/assets/94171193/571c4574-216f-4399-a733-0d3e4865f3b1)
 
+<br>
+<br>
+<br>
+
 Follow these steps to set up and run the script on your local machine:
 
 **1**. Clone the repository:
