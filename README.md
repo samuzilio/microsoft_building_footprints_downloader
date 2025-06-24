@@ -29,7 +29,7 @@ $ source .venv/bin/activate (for macOS and Linux)
 ```
 $ pip install -r requirements.txt
 ```
-**7**. Run the script (e.g. `downloader_lau.py`):
+**7**. Run the script:
 ```
 $ python downloader_lau.py
 ```
